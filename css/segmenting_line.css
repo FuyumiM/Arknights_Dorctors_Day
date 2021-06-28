@@ -1,0 +1,31 @@
+.segmenting-line {
+    position: relative;
+    height: 20px;
+    margin: 20px 0;
+    background:#fff;
+}
+.segmenting-line hr {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    border: none;
+    height: 1px;
+    margin: 0;
+    background-image: linear-gradient(to right,#fff,#000 50%,#fff);
+    background-repeat: no-repeat;
+}
+.segmenting-line div {
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    width: 100%;
+}
+
+.segmenting-line div span {
+    margin: auto;
+    padding: 0 20px;
+    display: inline-block;
+    background-color: #fdfdfd;
+    font-size: 16px;
+    color: #000;
+}
