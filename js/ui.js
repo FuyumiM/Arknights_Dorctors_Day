@@ -7,6 +7,10 @@ function newElement(text) {
     return span;
 }
 
+function addElement(e){
+    post_body.appendChild(e);
+}
+
 function getBody() {
     if(debug){
         var box = document.getElementsByName('debug_body');
