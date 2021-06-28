@@ -24,17 +24,19 @@ Math.seededRandom = function (max, min) {
 if (debug) {
     var load_url = './';
     var name = 'test';
-    var exp=100000;
+    var exp = 100000;
 } else {
     var load_url = 'https://cdn.jsdelivr.net/gh/FuyumiM/Arknights_Dorctors_Day@latest/';
     var name = jinsom.nickname_base;
-    var exp=jinsom.exp;
+    var exp = jinsom.exp;
 }
 
 var name_seed = name.hashCode();
 var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
 Math.seed = name_seed * time_seed + 1;
+
+character_json = addJSON("json/character.json");
 
 addCSS('css/segmenting_line.css');
 
@@ -56,4 +58,14 @@ function addCSS(url) {
     fileref.setAttribute("href", load_url + url);
     fileref.async = false;
     document.head.insertBefore(fileref, document.head.lastChild);
+}
+
+function addJSON(url) {
+    var r = "";
+    if (debug) {
+        r = JSON.parse(character);
+    } else {
+        r = $.ajax({ type: "get", url: load_url + url, async: false, dataType: "json" }).responseJSON;
+    }
+    return r;
 }
