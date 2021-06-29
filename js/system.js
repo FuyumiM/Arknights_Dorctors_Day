@@ -12,7 +12,7 @@ function main_page() {
     addElement(newElement(const_element_json["main_link"]));
 
     var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
-    var e_img=const_element_json["main_link"].replace("#CHARACTER_IMG_URL#",load_url + "png/" + character_json[character_index]['half']);
+    var e_img=const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#",load_url + "png/" + character_json[character_index]['half']);
     addElement(newElement(e_img));
     addElement(newElement("<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>" + character_json[character_index]['cn_name']+" "+character_json[character_index]['en_name'] + "</span>正在担任您的助理</p>"));
     addElement(newElement("<p style='float:center;text-align: center;'>" + character_json[character_index]['des'] + "</p>"));
