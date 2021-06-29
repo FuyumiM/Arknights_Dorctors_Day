@@ -15,7 +15,7 @@ function main_page() {
     addElement(newElement("<p style='text-align: center;'><img align='center' src='" + load_url + "png/" + character_json[character_index]['half'] + "'></img></p>"));
     addElement(newElement("<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>" + character_json[character_index]['cn_name']+" "+character_json[character_index]['en_name'] + "</span>正在担任您的助理</p>"));
     addElement(newElement("<p style='float:center;text-align: center;'>" + character_json[character_index]['des'] + "</p>"));
-    addElement(newElement("<p style='float:center;text-align: center;'><i>" + character_json[character_index]['moredes'] + "</i></p>"));
+    addElement(newElement("<p style='float:center;text-align: center;'><em>" + character_json[character_index]['moredes'] + "</em></p>"));
 
     addElement(newElement("<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>"));
 
@@ -29,12 +29,14 @@ function main_page() {
 function get_Level(exp) {
     var r = '博士后';
     if (this.exp < 1000) {
-        r = '见习博士';
+        r = '注册博士';
     } else if (exp < 3000) {
-        r = '实习博士';
+        r = '见习博士';
     } else if (exp < 7500) {
-        r = '准博士';
+        r = '实习博士';
     } else if (exp < 25000) {
+        r = '准博士';
+    }else if (exp < 70000) {
         r = '博士';
     }
     return r;

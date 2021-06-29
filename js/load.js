@@ -1,4 +1,4 @@
-var debug = false;
+var debug = true;
 
 String.prototype.hashCode = function () {
     var hash = 0, i, chr;
@@ -36,7 +36,8 @@ var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
 Math.seed = name_seed * time_seed + 1;
 
-character_json = addJSON("json/character_w.json");
+character_json = addJSON("json/character.json");
+const_element_json = addJSON("json/const_element.json");
 
 addCSS('css/segmenting_line.css');
 
