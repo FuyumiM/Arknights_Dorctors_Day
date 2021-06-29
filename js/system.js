@@ -3,14 +3,26 @@ main();
 
 function main() {
     main_page();
+    addElement(newElement("<br><br><br><br><p style='float:center;text-align: center;'>事件系统正在开发中，敬请期待</p>"));
 }
 
-function main_page(){
+function main_page() {
     addElement(newElement("<div class='segmenting-line'><hr><div><span>神经连接中</span></div></div>"));
-    addElement(newElement("<p style='float:center;text-align: center;'>正在接受通讯中心返回数据</p>"));
+
+    addElement(newElement("<p style='float:center;text-align: center;'>为您接通助理线路...</p>"));
+
+    var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
+    addElement(newElement("<p style='text-align: center;'><img align='center' src='" + load_url + "png/" + character_json[character_index]['half'] + "'></img></p>"));
+    addElement(newElement("<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>" + character_json[character_index]['cn_name']+" "+character_json[character_index]['en_name'] + "</span>正在担任您的助理</p>"));
+    addElement(newElement("<p style='float:center;text-align: center;'>" + character_json[character_index]['des'] + "</p>"));
+    addElement(newElement("<p style='float:center;text-align: center;'><i>" + character_json[character_index]['moredes'] + "</i></p>"));
+
     addElement(newElement("<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>"));
+
     addElement(newElement("<p style='float:center;text-align: center;'>欢迎回来，<span style='font-weight: bold;'>Dr." + name + "</span></p>"));
+
     addElement(newElement("<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>" + get_Level(exp) + "</span>身份登录终端</p>"));
+
     addElement(newElement("<p style='float:center;text-align: center;'>" + get_TimeLog() + "</p>"));
 }
 

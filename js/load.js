@@ -11,7 +11,7 @@ String.prototype.hashCode = function () {
     return Math.abs(hash);
 };
 
-Math.seededRandom = function (max, min) {
+Math.seededRandom = function (min, max) {
     max = max || 1;
     min = min || 0;
     Math.seed = (Math.seed * 9301 + 49297) % 233280;
@@ -23,7 +23,7 @@ Math.seededRandom = function (max, min) {
 
 if (debug) {
     var load_url = './';
-    var name = 'test';
+    var name = 'Fuyumi';
     var exp = 100000;
 } else {
     var load_url = 'https://cdn.jsdelivr.net/gh/FuyumiM/Arknights_Dorctors_Day@latest/';
@@ -36,7 +36,7 @@ var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
 Math.seed = name_seed * time_seed + 1;
 
-character_json = addJSON("json/character.json");
+character_json = addJSON("json/character_w.json");
 
 addCSS('css/segmenting_line.css');
 
@@ -63,7 +63,7 @@ function addCSS(url) {
 function addJSON(url) {
     var r = "";
     if (debug) {
-        r = JSON.parse(character);
+        r = $.ajax({ type: "get", url: "https://raw.githubusercontent.com/FuyumiM/Arknights_Dorctors_Day/main/" + url, async: false, dataType: "json" }).responseJSON;
     } else {
         r = $.ajax({ type: "get", url: load_url + url, async: false, dataType: "json" }).responseJSON;
     }
