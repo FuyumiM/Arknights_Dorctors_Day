@@ -40,6 +40,7 @@ character_json = addJSON("json/character.json");
 const_element_json = addJSON("json/const_element.json");
 
 addCSS('css/segmenting_line.css');
+addCSS('css/table.css');
 
 addJS('js/ui.js');
 addJS('js/system.js');

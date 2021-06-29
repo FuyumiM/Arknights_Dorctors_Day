@@ -14,17 +14,23 @@ function main_page() {
     var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
     var e_img=const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#",load_url + "png/" + character_json[character_index]['half']);
     addElement(newElement(e_img));
-    addElement(newElement("<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>" + character_json[character_index]['cn_name']+" "+character_json[character_index]['en_name'] + "</span>正在担任您的助理</p>"));
-    addElement(newElement("<p style='float:center;text-align: center;'>" + character_json[character_index]['des'] + "</p>"));
-    addElement(newElement("<p style='float:center;text-align: center;'><em>" + character_json[character_index]['moredes'] + "</em></p>"));
 
-    addElement(newElement("<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>"));
+    var e_character_name=const_element_json["main_character_name"].replace("#CHARACTER_NAME#",character_json[character_index]['cn_name']).replace("#CHARACTER_EN_NAME#",character_json[character_index]['en_name']);
+    addElement(newElement(e_character_name));
 
-    addElement(newElement("<p style='float:center;text-align: center;'>欢迎回来，<span style='font-weight: bold;'>Dr." + name + "</span></p>"));
+    var e_character_des=const_element_json["main_character_des"].replace("#CHARACTER_DES#",character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#",character_json[character_index]['moredes']);
+    addElement(newElement(e_character_des));
 
-    addElement(newElement("<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>" + get_Level(exp) + "</span>身份登录终端</p>"));
+    addElement(newElement(const_element_json["main_link_success"]));
 
-    addElement(newElement("<p style='float:center;text-align: center;'>" + get_TimeLog() + "</p>"));
+    var e_welcome=const_element_json["main_welcome"].replace("#NAME#",name);
+    addElement(newElement(e_welcome));
+
+    var e_level=const_element_json["main_level"].replace("#LEVEL#",get_Level(exp));
+    addElement(newElement(e_level));
+
+    var e_time=const_element_json["main_time"].replace("#TIME#",get_TimeLog());
+    addElement(newElement(e_time));
 }
 
 function get_Level(exp) {
