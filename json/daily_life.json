@@ -466,7 +466,7 @@
             "“上去戳一下！”",
             "<br>"
         ],
-        "exp": "var random_character=parseInt(Math.seededRandom(0, character_json.length - 1));element.innerHTML=element.innerHTML.replace('#CHARACTER_NAME#',character_json[random_character]['cn_name']);element.appendChild(newElement(const_element_json['event_icon'].replace('#CHARACTER_IMG_URL#', load_url + 'png/' + character_json[character_index]['icon'])));element.appendChild(newText(character_json[random_character]['cn_name']+'：“'+character_json[random_character]['voice']['信赖触摸']+'”'));",
+        "exp": "var random_character=parseInt(Math.seededRandom(0, character_json.length - 1));element.innerHTML=element.innerHTML.replace('#CHARACTER_NAME#',character_json[random_character]['cn_name']);element.appendChild(newElement(const_element_json['event_icon'].replace('#CHARACTER_ICON_URL#', load_url + 'png/' + character_json[character_index]['icon'])));element.appendChild(newText(character_json[random_character]['cn_name']+'：“'+character_json[random_character]['voice']['信赖触摸']+'”'));",
         "branch": [
             {
                 "limit": 100,
