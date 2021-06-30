@@ -1,4 +1,4 @@
-var debug = true;
+var debug = false;
 
 String.prototype.hashCode = function () {
     var hash = 0, i, chr;
@@ -44,6 +44,7 @@ event_json = addJSON("json/event.json");
 
 addCSS('css/segmenting_line.css');
 addCSS('css/table.css');
+addCSS('css/button.css');
 
 addJS('js/ui.js');
 addJS('js/event.js');

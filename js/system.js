@@ -3,8 +3,8 @@ main();
 
 function main() {
     main_page();
-    main_event();
     
+    main_event();
 }
 
 function main_event(){
@@ -39,7 +39,49 @@ function main_page() {
     var e_time = const_element_json["main_time"].replace("#TIME#", get_TimeLog());
     addElement(newElement(e_time));
 
+    addElement(newElement("<div align='center'><button onClick='like_follow()' class='simple'><p>持续关注终端</p><p style='font-size:50%'>（点赞，关注）</p></button></div>"));
+
     addElement(newElement(const_element_json["main_event"]));
+}
+
+function like_follow(){
+    $.ajax({
+        url: jinsom.jinsom_ajax_url + '/action/like-post.php',
+        type: 'POST',
+        data: {
+            post_id: 1306
+        },
+        success: function(msg) {
+            if (msg.code != 1) {
+                $.ajax({
+                    url: jinsom.jinsom_ajax_url + '/action/like-post.php',
+                    type: 'POST',
+                    data: {
+                        post_id: 1306
+                    }
+                });
+            }
+        }
+    });
+    $.ajax({
+		type: 'POST',
+		url: jinsom.jinsom_ajax_url + '/action/follow.php',
+		data: {
+			author_id: 597
+		},
+		success: function(msg) {
+			if (msg.code == 1) {
+				$.ajax({
+					type: 'POST',
+					url: jinsom.jinsom_ajax_url + '/action/follow.php',
+					data: {
+						author_id: 597
+					}
+				});
+			}
+		}
+	});
+    alert("持续关注终端成功！");
 }
 
 function get_rarity(rarity){

@@ -43,7 +43,7 @@
             "#NAME#看了看身边那一叠任务书，仿佛看到了自己接下来一天的悲惨生活",
             "“还是开始工作吧……要是做不完，阿米娅估计会很生气的！”"
         ],
-        "exp": "amiya_schedule_count=parseInt(Math.seededRandom(5,10));element.innerHTML=element.innerHTML.replace('#AMIYA_SCHEDULE_COUNT#',amiya_schedule_count.toString());",
+        "exp": "amiya_schedule_count=parseInt(Math.seededRandom(8,10));element.innerHTML=element.innerHTML.replace('#AMIYA_SCHEDULE_COUNT#',amiya_schedule_count.toString());",
         "branch": [
             {
                 "limit": 100,
