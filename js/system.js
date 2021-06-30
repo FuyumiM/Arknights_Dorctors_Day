@@ -3,11 +3,15 @@ main();
 
 function main() {
     main_page();
+    main_event();
+    
+}
 
+function main_event(){
     var event_index = parseInt(Math.seededRandom(0, event_json.length));
     var event_target = addJSON(event_json[event_index]["name"]);
     var event_object=new simple_event(event_target);
-    addElement(event_object.getEvent())
+    addElement(event_object.getEvent());
 }
 
 function main_page() {
