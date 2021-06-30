@@ -60,23 +60,23 @@
         "exp": "if(amiya_schedule_count<=0){this.next_flag='工作完成'}element.innerHTML=element.innerHTML.replace('#AMIYA_SCHEDULE_COUNT#',parseInt(amiya_schedule_count).toString());amiya_schedule_count--;",
         "branch": [
             {
-                "limit": 16,
+                "limit": 12,
                 "next": "刷龙门币"
             },
             {
-                "limit": 32,
+                "limit": 24,
                 "next": "刷技能书"
             },
             {
-                "limit": 48,
+                "limit": 36,
                 "next": "刷碳"
             },
             {
-                "limit": 64,
+                "limit": 48,
                 "next": "刷经验"
             },
             {
-                "limit": 80,
+                "limit": 60,
                 "next": "刷红票"
             },
             {

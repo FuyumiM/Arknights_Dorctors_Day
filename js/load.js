@@ -23,7 +23,7 @@ Math.seededRandom = function (min, max) {
 
 if (debug) {
     var load_url = './';
-    var user_name = 'Fuyumi';
+    var user_name = 'Mengluu';
     var exp = 100000;
 } else {
     var load_url = 'https://cdn.jsdelivr.net/gh/FuyumiM/Arknights_Dorctors_Day@latest/';
