@@ -20,17 +20,20 @@ function main_page() {
     addElement(newElement(const_element_json["main_link"]));
 
     var e_img = const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#", load_url + "png/" + character_json[character_index]['half']);
-    addElement(newElement(e_img));
+    //addElement(newElement(e_img));
 
     var e_character_name = const_element_json["main_character_name"].replace("#CHARACTER_NAME#", character_json[character_index]['cn_name']).replace("#CHARACTER_EN_NAME#", character_json[character_index]['en_name']);
-    addElement(newElement(e_character_name));
+    //addElement(newElement(e_character_name));
 
     var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']).replace("#CHARACTER_CLASS#", character_json[character_index]['class']).replace("#CHARACTER_RARITY#", get_rarity(parseInt(character_json[character_index]['rarity']))).replace("#CHARACTER_POSITION#", character_json[character_index]['position']).replace("#CHARACTER_CAMP#", character_json[character_index]['camp']).replace("#CHARACTER_BIRTHPLACE#", character_json[character_index]['birthplace']);
-    addElement(newElement(e_character_des));
+    //addElement(newElement(e_character_des));
 
     var l=["任命助理","交谈1","交谈2","交谈3","信赖提升后交谈1","信赖提升后交谈2","信赖提升后交谈3","闲置","干员报到","进驻设施","戳一下","信赖触摸","问候"];
     var e_voice = const_element_json["main_character_voice"].replace("#CHARACTER_VOICE#", character_json[character_index]['voice'][l[parseInt(Math.seededRandom(0,l.length))]]);
     //addElement(newElement(e_voice));
+
+    var e_box="<table align='center' class='gridtable' style='width:80%'><tbody><tr><td>"+e_img+e_character_name+e_character_des+e_voice+"</td></tr></tbody></table>";
+    addElement(newElement(e_box));
 
     var e_welcome = const_element_json["main_welcome"].replace("#NAME#", user_name);
     addElement(newElement(e_welcome));
