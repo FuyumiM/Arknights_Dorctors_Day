@@ -2,12 +2,12 @@
     "main_loading": "<div class='segmenting-line'><hr><div><span>神经连接中</span></div></div>",
     "main_link": "<p style='float:center;text-align: center;'>为您接通助理线路...</p>",
     "main_character_img": "<p style='text-align: center;'><img align='center' src='#CHARACTER_IMG_URL#'></img></p>",
-    "main_character_name":"<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>#CHARACTER_NAME# #CHARACTER_EN_NAME#</span>正在担任您的助理</p>",
-    "main_character_des":"<table align='center' class='gridtable'><tr><th><p style='float:center;text-align: center;'>#CHARACTER_DES#</p></th></tr><tr><td><p style='float:center;text-align: center;'><em>#CHARACTER_MORE_DES#</em></tr></td></p><table>",
-    "main_link_success":"<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>",
-    "main_welcome":"<p style='float:center;text-align: center;'>欢迎回来，<span style='font-weight: bold;'>Dr.#NAME#</span></p>",
-    "main_level":"<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>#LEVEL#</span>身份登录终端</p>",
-    "main_time":"<p style='float:center;text-align: center;'>#TIME#</p>",
-    "main_event":"<p style='float:center;text-align: center;'><font color='red'>以下是PRTS选取的部分行动记录，请您审阅</font></p><div class='segmenting-line'><hr><div><span>事件记录</span></div></div>",
-    "event_icon":"<p style='text-align: center;'><img src='#CHARACTER_ICON_URL#'></img></p>"
+    "main_character_name": "<p style='float:center;text-align: center;'>干员<span style='font-weight: bold;'>#CHARACTER_NAME# #CHARACTER_EN_NAME#</span>正在担任您的助理</p>",
+    "main_character_des": "<table align= 'center' class= 'gridtable '><tbody><tr><th>职业</th><th>星级</th><th>位置</th><th>阵营</th><th>出生地</th></tr><tr><td>#CHARACTER_CLASS#</td><td>#CHARACTER_RARITY#</td><td>#CHARACTER_POSITION#</td><td>#CHARACTER_CAMP#</td><td>#CHARACTER_BIRTHPLACE#</td></tr><tr><th colspan= '5 '><p style= 'float:center;text-align: center;'>#CHARACTER_DES#</p></th></tr><tr><td colspan= '5 '><p style= 'float:center;text-align: center; '><em>#CHARACTER_MORE_DES#</em></p></td></tr></tbody></table>",
+    "main_link_success": "<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>",
+    "main_welcome": "<p style='float:center;text-align: center;'>欢迎回来，<span style='font-weight: bold;'>Dr.#NAME#</span></p>",
+    "main_level": "<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>#LEVEL#</span>身份登录终端</p>",
+    "main_time": "<p style='float:center;text-align: center;'>#TIME#</p>",
+    "main_event": "<p style='float:center;text-align: center;'><font color='red'>以下是PRTS选取的部分行动记录，请您审阅</font></p><div class='segmenting-line'><hr><div><span>事件记录</span></div></div>",
+    "event_icon": "<p style='text-align: center;'><img src='#CHARACTER_ICON_URL#'></img></p>"
 }

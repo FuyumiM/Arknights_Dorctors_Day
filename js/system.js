@@ -21,7 +21,7 @@ function main_page() {
     var e_character_name = const_element_json["main_character_name"].replace("#CHARACTER_NAME#", character_json[character_index]['cn_name']).replace("#CHARACTER_EN_NAME#", character_json[character_index]['en_name']);
     addElement(newElement(e_character_name));
 
-    var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']);
+    var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']).replace("#CHARACTER_CLASS#", character_json[character_index]['class']).replace("#CHARACTER_RARITY#", get_rarity(parseInt(character_json[character_index]['rarity']))).replace("#CHARACTER_POSITION#", character_json[character_index]['position']).replace("#CHARACTER_CAMP#", character_json[character_index]['camp']).replace("#CHARACTER_BIRTHPLACE#", character_json[character_index]['birthplace']);
     addElement(newElement(e_character_des));
 
     addElement(newElement(const_element_json["main_link_success"]));
@@ -36,6 +36,14 @@ function main_page() {
     addElement(newElement(e_time));
 
     addElement(newElement(const_element_json["main_event"]));
+}
+
+function get_rarity(rarity){
+    var r="";
+    for(var i=0;i<rarity;i++){
+        r+="★";
+    }
+    return r;
 }
 
 function get_Level(exp) {
