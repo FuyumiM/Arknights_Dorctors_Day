@@ -34,7 +34,7 @@ if (debug) {
 var name_seed = name.hashCode();
 var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
-Math.seed = name_seed * time_seed + 1;
+Math.seed = name_seed + time_seed + 1;
 
 character_json = addJSON("json/character.json");
 const_element_json = addJSON("json/const_element.json");

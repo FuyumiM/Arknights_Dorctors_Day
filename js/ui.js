@@ -7,6 +7,13 @@ function newElement(text) {
     return span;
 }
 
+function newText(text) {
+    var span = document.createElement('p');
+    span.innerHTML = text;
+    span.style='text-indent: 2em;';
+    return span;
+}
+
 function addElement(e){
     post_body.appendChild(e);
 }

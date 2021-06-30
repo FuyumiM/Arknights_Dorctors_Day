@@ -3,7 +3,6 @@ main();
 
 function main() {
     main_page();
-    addElement(newElement("<br><br><br><br><p style='float:center;text-align: center;'>事件系统正在开发中，敬请期待</p>"));
 
     test_event.forEach (event => {
         var s=new simple_event(event);
