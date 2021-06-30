@@ -34,13 +34,20 @@ if (debug) {
 var name_seed = user_name.hashCode();
 var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
-Math.seed = name_seed * time_seed + 1;
+Math.seed = name_seed + time_seed * 9301 + 49297;
 
-character_json = addJSON("json/character_w.json");
+console.log(Math.seed.toString())
+
+character_json = addJSON("json/character.json");
+const_element_json = addJSON("json/const_element.json");
+event_json = addJSON("json/event.json");
 
 addCSS('css/segmenting_line.css');
+addCSS('css/table.css');
+addCSS('css/button.css');
 
 addJS('js/ui.js');
+addJS('js/event.js');
 addJS('js/system.js');
 
 function addJS(url) {
