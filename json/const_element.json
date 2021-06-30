@@ -9,5 +9,6 @@
     "main_level": "<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>#LEVEL#</span>身份登录终端</p>",
     "main_time": "<p style='float:center;text-align: center;'>#TIME#</p>",
     "main_event": "<p style='float:center;text-align: center;'><font color='red'>以下是PRTS选取的部分行动记录，请您审阅</font></p><div class='segmenting-line'><hr><div><span>事件记录</span></div></div>",
+    "main_character_voice":"<p style='float:center;text-align: center;'>“#CHARACTER_VOICE#”</p>",
     "event_icon": "<p style='text-indent: 2em;'><img src='#CHARACTER_ICON_URL#'></img></p>"
 }

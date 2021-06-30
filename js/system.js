@@ -28,7 +28,9 @@ function main_page() {
     var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']).replace("#CHARACTER_CLASS#", character_json[character_index]['class']).replace("#CHARACTER_RARITY#", get_rarity(parseInt(character_json[character_index]['rarity']))).replace("#CHARACTER_POSITION#", character_json[character_index]['position']).replace("#CHARACTER_CAMP#", character_json[character_index]['camp']).replace("#CHARACTER_BIRTHPLACE#", character_json[character_index]['birthplace']);
     addElement(newElement(e_character_des));
 
-    addElement(newElement(const_element_json["main_link_success"]));
+    var l=["任命助理","交谈1","交谈2","交谈3","信赖提升后交谈1","信赖提升后交谈2","信赖提升后交谈3","闲置","干员报到","进驻设施","戳一下","信赖触摸","问候"];
+    var e_voice = const_element_json["main_character_voice"].replace("#CHARACTER_VOICE#", character_json[character_index]['voice'][l[parseInt(Math.seededRandom(0,l.length))]]);
+    //addElement(newElement(e_voice));
 
     var e_welcome = const_element_json["main_welcome"].replace("#NAME#", user_name);
     addElement(newElement(e_welcome));
