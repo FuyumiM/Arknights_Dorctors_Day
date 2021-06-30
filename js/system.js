@@ -1,13 +1,13 @@
-var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
+var character_index = parseInt(Math.seededRandom(0, character_json.length));
 main();
 
 function main() {
     main_page();
 
-    test_event.forEach (event => {
-        var s=new simple_event(event);
-        addElement(s.getEvent());
-    });
+    var event_index = parseInt(Math.seededRandom(0, event_json.length));
+    var event_target = addJSON(event_json[event_index]["name"]);
+    var event_object=new simple_event(event_target);
+    addElement(event_object.getEvent())
 }
 
 function main_page() {
@@ -15,24 +15,24 @@ function main_page() {
 
     addElement(newElement(const_element_json["main_link"]));
 
-    var e_img=const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#",load_url + "png/" + character_json[character_index]['half']);
+    var e_img = const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#", load_url + "png/" + character_json[character_index]['half']);
     addElement(newElement(e_img));
 
-    var e_character_name=const_element_json["main_character_name"].replace("#CHARACTER_NAME#",character_json[character_index]['cn_name']).replace("#CHARACTER_EN_NAME#",character_json[character_index]['en_name']);
+    var e_character_name = const_element_json["main_character_name"].replace("#CHARACTER_NAME#", character_json[character_index]['cn_name']).replace("#CHARACTER_EN_NAME#", character_json[character_index]['en_name']);
     addElement(newElement(e_character_name));
 
-    var e_character_des=const_element_json["main_character_des"].replace("#CHARACTER_DES#",character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#",character_json[character_index]['moredes']);
+    var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']);
     addElement(newElement(e_character_des));
 
     addElement(newElement(const_element_json["main_link_success"]));
 
-    var e_welcome=const_element_json["main_welcome"].replace("#NAME#",name);
+    var e_welcome = const_element_json["main_welcome"].replace("#NAME#", user_name);
     addElement(newElement(e_welcome));
 
-    var e_level=const_element_json["main_level"].replace("#LEVEL#",get_Level(exp));
+    var e_level = const_element_json["main_level"].replace("#LEVEL#", get_Level(exp));
     addElement(newElement(e_level));
 
-    var e_time=const_element_json["main_time"].replace("#TIME#",get_TimeLog());
+    var e_time = const_element_json["main_time"].replace("#TIME#", get_TimeLog());
     addElement(newElement(e_time));
 
     addElement(newElement(const_element_json["main_event"]));
@@ -48,7 +48,7 @@ function get_Level(exp) {
         r = '实习博士';
     } else if (exp < 25000) {
         r = '准博士';
-    }else if (exp < 70000) {
+    } else if (exp < 70000) {
         r = '博士';
     }
     return r;

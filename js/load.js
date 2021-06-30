@@ -23,21 +23,22 @@ Math.seededRandom = function (min, max) {
 
 if (debug) {
     var load_url = './';
-    var name = 'Fuyumi';
+    var user_name = 'Fuyumi';
     var exp = 100000;
 } else {
     var load_url = 'https://cdn.jsdelivr.net/gh/FuyumiM/Arknights_Dorctors_Day@latest/';
-    var name = jinsom.nickname_base;
+    var user_name = jinsom.nickname_base;
     var exp = jinsom.exp;
 }
 
-var name_seed = name.hashCode();
+var name_seed = user_name.hashCode();
 var day = new Date();
 var time_seed = (day.getDate() + day.getMonth() * 31 + day.getFullYear() * 365) * 24 + day.getHours();
 Math.seed = name_seed + time_seed + 1;
 
 character_json = addJSON("json/character.json");
 const_element_json = addJSON("json/const_element.json");
+event_json = addJSON("json/event.json");
 
 addCSS('css/segmenting_line.css');
 addCSS('css/table.css');
