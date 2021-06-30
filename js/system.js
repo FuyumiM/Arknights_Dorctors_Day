@@ -4,6 +4,11 @@ main();
 function main() {
     main_page();
     addElement(newElement("<br><br><br><br><p style='float:center;text-align: center;'>事件系统正在开发中，敬请期待</p>"));
+
+    test_event.forEach (event => {
+        var s=new simple_event(event);
+        addElement(s.getEvent());
+    });
 }
 
 function main_page() {
@@ -31,6 +36,8 @@ function main_page() {
 
     var e_time=const_element_json["main_time"].replace("#TIME#",get_TimeLog());
     addElement(newElement(e_time));
+
+    addElement(newElement(const_element_json["main_event"]));
 }
 
 function get_Level(exp) {

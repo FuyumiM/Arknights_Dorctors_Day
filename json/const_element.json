@@ -7,5 +7,6 @@
     "main_link_success":"<div class='segmenting-line'><hr><div><span>连接成功</span></div></div>",
     "main_welcome":"<p style='float:center;text-align: center;'>欢迎回来，<span style='font-weight: bold;'>Dr.#NAME#</span></p>",
     "main_level":"<p style='float:center;text-align: center;'>您正在以<span style='font-weight: bold;'>#LEVEL#</span>身份登录终端</p>",
-    "main_time":"<p style='float:center;text-align: center;'>#TIME#</p>"
+    "main_time":"<p style='float:center;text-align: center;'>#TIME#</p>",
+    "main_event":"<p style='float:center;text-align: center;'>以下是PRTS选取的部分行动记录，请您审阅</p><div class='segmenting-line'><hr><div><span>事件记录</span></div></div>"
 }

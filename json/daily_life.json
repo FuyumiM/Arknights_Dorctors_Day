@@ -1,0 +1,40 @@
+[
+    {
+        "author": "Fuyumi",
+        "name":"日常生活",
+        "des":"博士平淡无奇的一天",
+        "time":"所有",
+        "head": {
+            "story": ["这是测试文件的头部","这是测试文件的头部2","这是测试文件的头部3"],
+            "exp":"",
+            "branch": [
+                {
+                    "limit": 1,
+                    "next":"branch1"
+                },
+                {
+                    "limit": 100,
+                    "next":"branch2"
+                }
+            ]
+        },
+        "branch1":{
+            "story": ["这是测试文件的branch1","这是测试文件的branch1","这是测试文件的branch1"],
+            "branch": [
+                {
+                    "limit": 100,
+                    "next":"end"
+                }
+            ]
+        },
+        "branch2":{
+            "story": ["branch2","branch2","branch2"],
+            "branch": [
+                {
+                    "limit": 100,
+                    "next":"end"
+                }
+            ]
+        }
+    }
+]

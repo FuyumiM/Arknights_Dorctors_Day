@@ -43,6 +43,7 @@ addCSS('css/segmenting_line.css');
 addCSS('css/table.css');
 
 addJS('js/ui.js');
+addJS('js/event.js');
 addJS('js/system.js');
 
 function addJS(url) {
