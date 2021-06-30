@@ -141,24 +141,28 @@ var test_event = [
             "exp":"if(amiya_schedule_count<=0){this.next_flag='工作完成'}element.innerHTML=element.innerHTML.replace('#AMIYA_SCHEDULE_COUNT#',parseInt(amiya_schedule_count).toString());amiya_schedule_count--;",
             "branch": [
                 {
-                    "limit": 10,
+                    "limit": 16,
                     "next": "刷龙门币"
                 },
                 {
-                    "limit": 20,
+                    "limit": 32,
                     "next": "刷技能书"
                 },
                 {
-                    "limit": 30,
+                    "limit": 48,
                     "next": "刷碳"
                 },
                 {
-                    "limit": 80,
+                    "limit": 64,
                     "next": "刷经验"
                 },
                 {
-                    "limit": 100,
+                    "limit": 80,
                     "next": "刷红票"
+                },
+                {
+                    "limit": 100,
+                    "next": "基建触碰"
                 }
             ]
         },
@@ -179,6 +183,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>货物运送开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -190,7 +195,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“讯使，部署到上方治疗地块上！准备好之后立刻开始回复费用！”','“玫剑圣，部署到中间治疗地块上！准备单切术士！”','“调香师，下场，治疗他们！”','“猫猫头，后方支援，辅助清理杂兵！”','“红豆，准备清理源石虫！”','“安洁莉娜，反重力！”','“小羊！火山！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“讯使，部署到上方治疗地块上！准备好之后立刻开始回复费用！”','“玫剑圣，部署到中间治疗地块上！准备单切术士！”','“调香师，下场，治疗他们！”','“猫猫头，后方支援，辅助清理杂兵！”','“红豆，准备清理源石虫！”','“安洁莉娜，反重力！”','“小羊！火山！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 100,
@@ -202,7 +207,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“大斧哥来了，全体警惕，全力应对！小心它的斧头！”','“左边源石虫，注意及时击杀！它要漏了！”','“后面的大盾哥来了，术士准备！技能开启！”','“法术近卫出现在红点！治疗干员准备！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“大斧哥来了，全体警惕，全力应对！小心它的斧头！”','“左边源石虫，注意及时击杀！它要漏了！”','“后面的大盾哥来了，术士准备！技能开启！”','“法术近卫出现在红点！治疗干员准备！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 10,
@@ -242,6 +247,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>货物运送结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -253,6 +259,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>空中威胁开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -264,7 +271,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“陨星，使用霰射弹头清理聚集的无人机！”','“华法琳，准备不稳定血浆，支援能天使！”','“飞机冲过来了，能天使，过载准备完成了吗？”','“猫猫头，伤害辅助，有几个残血的无人机过去了！”','“安洁莉娜！反重力，击杀那个术士！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“陨星，使用霰射弹头清理聚集的无人机！”','“华法琳，准备不稳定血浆，支援能天使！”','“飞机冲过来了，能天使，过载准备完成了吗？”','“猫猫头，伤害辅助，有几个残血的无人机过去了！”','“安洁莉娜！反重力，击杀那个术士！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 100,
@@ -276,7 +283,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“御4无人机出现，优先攻击目标！”','“一群妖怪无人机即将出现，注意及时清理！”','“检测到敌人飞行器，准备迎接空降队伍！”','“高阶术士组长进入观测范围，全员戒备！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“御4无人机出现，优先攻击目标！”','“一群妖怪无人机即将出现，注意及时清理！”','“检测到敌人飞行器，准备迎接空降队伍！”','“高阶术士组长进入观测范围，全员戒备！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 10,
@@ -316,6 +323,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>空中威胁结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -327,6 +335,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>粉碎防御开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -390,6 +399,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>粉碎防御结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -401,6 +411,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>资源保障开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -412,7 +423,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“阿消，跑到那个坑旁边！”','“暗锁，辅助队友，处理掉那些重量轻的单位！”','“塞雷亚，准备阻挡敌人，不要放走任何一个敌人！”','“小羊，点燃，干掉那几个法术近卫组长！！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“阿消，跑到那个坑旁边！”','“暗锁，辅助队友，处理掉那些重量轻的单位！”','“塞雷亚，准备阻挡敌人，不要放走任何一个敌人！”','“小羊，点燃，干掉那几个法术近卫组长！！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 100,
@@ -424,7 +435,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“法术近卫组长出现，优先攻击目标！”','“重装防御组长即将出现，注意及时清理！”','“检测到武装人员，重装干员准备！”','“磐蟹出现，推拉干员准备进行清理！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“法术近卫组长出现，优先攻击目标！”','“重装防御组长即将出现，注意及时清理！”','“检测到武装人员，重装干员准备！”','“磐蟹出现，推拉干员准备进行清理！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 10,
@@ -464,6 +475,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>资源保障结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -475,6 +487,7 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>战术演习开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -486,7 +499,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“猫猫头，侧位支援，辅助清理杂兵！”','“红豆，准备清理源石虫！”','“能天使，无人机来了！”','“德克萨斯！剑雨！晕住他！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“猫猫头，侧位支援，辅助清理杂兵！”','“红豆，准备清理源石虫！”','“能天使，无人机来了！”','“德克萨斯！剑雨！晕住他！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 100,
@@ -498,7 +511,7 @@ var test_event = [
             "story": [
                 
             ],
-            "exp":"var e_list=['“源石虫大量出现，快速击杀！”','“猎狗大量出现，一定要挡住！！”','“检测到武装人员，重装干员准备！”','“重装防御者出现，术士干员准备！”'];element.appendChild(newElement('<p style=\\'text-indent: 2em;\\'>'+e_list[parseInt(Math.seededRandom(0,e_list.length))]+'</p>'))",
+            "exp":"var e_list=['“源石虫大量出现，快速击杀！”','“猎狗大量出现，一定要挡住！！”','“检测到武装人员，重装干员准备！”','“重装防御者出现，术士干员准备！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
             "branch": [
                 {
                     "limit": 10,
@@ -538,6 +551,35 @@ var test_event = [
             "story": [
                 "<div class='segmenting-line'><hr><div><span>战术演习结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
+            "branch": [
+                {
+                    "limit": 100,
+                    "next": "开始工作"
+                }
+            ]
+        },
+        "基建触碰":{
+            "story": [
+                "<div class='segmenting-line'><hr><div><span>基建触碰开始</span></div></div>",
+                "“去基建看看有谁在吧……”",
+                "“欸？看到了#CHARACTER_NAME#！”",
+                "“上去戳一下！”",
+                "<br>"
+            ],
+            "exp":"var random_character=parseInt(Math.seededRandom(0, character_json.length - 1));element.innerHTML=element.innerHTML.replace('#CHARACTER_NAME#',character_json[random_character]['cn_name']);element.appendChild(newText(character_json[random_character]['cn_name']+'：“'+character_json[random_character]['voice']['信赖触摸']+'”'));",
+            "branch": [
+                {
+                    "limit": 100,
+                    "next": "基建触碰_结束"
+                }
+            ]
+        },
+        "基建触碰_结束":{
+            "story": [
+                "<div class='segmenting-line'><hr><div><span>基建触碰结束</span></div></div>"
+            ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,

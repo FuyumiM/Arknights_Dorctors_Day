@@ -61,24 +61,28 @@
             "exp":"if(amiya_schedule_count<=0){this.next_flag='工作完成'}element.innerHTML=element.innerHTML.replace('#AMIYA_SCHEDULE_COUNT#',parseInt(amiya_schedule_count).toString());amiya_schedule_count--;",
             "branch": [
                 {
-                    "limit": 10,
+                    "limit": 16,
                     "next": "刷龙门币"
                 },
                 {
-                    "limit": 20,
+                    "limit": 32,
                     "next": "刷技能书"
                 },
                 {
-                    "limit": 30,
+                    "limit": 48,
                     "next": "刷碳"
                 },
                 {
-                    "limit": 80,
+                    "limit": 64,
                     "next": "刷经验"
                 },
                 {
-                    "limit": 100,
+                    "limit": 80,
                     "next": "刷红票"
+                },
+                {
+                    "limit": 100,
+                    "next": "基建触碰"
                 }
             ]
         },
@@ -99,6 +103,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>货物运送开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -162,6 +167,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>货物运送结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -173,6 +179,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>空中威胁开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -236,6 +243,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>空中威胁结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -247,6 +255,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>粉碎防御开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -310,6 +319,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>粉碎防御结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -321,6 +331,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>资源保障开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -384,6 +395,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>资源保障结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -395,6 +407,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>战术演习开始</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -458,6 +471,7 @@
             "story": [
                 "<div class='segmenting-line'><hr><div><span>战术演习结束</span></div></div>"
             ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,
@@ -467,11 +481,25 @@
         },
         "基建触碰":{
             "story": [
+                "<div class='segmenting-line'><hr><div><span>基建触碰开始</span></div></div>",
                 "“去基建看看有谁在吧……”",
                 "“欸？看到了#CHARACTER_NAME#！”",
-                "“上去戳一下！嘿嘿嘿……”"
+                "“上去戳一下！”",
+                "<br>"
             ],
-            "exp":"var e_list=['“源石虫大量出现，快速击杀！”','“猎狗大量出现，一定要挡住！！”','“检测到武装人员，重装干员准备！”','“重装防御者出现，术士干员准备！”'];element.appendChild(newText(e_list[parseInt(Math.seededRandom(0,e_list.length))]))",
+            "exp":"var random_character=parseInt(Math.seededRandom(0, character_json.length - 1));element.innerHTML=element.innerHTML.replace('#CHARACTER_NAME#',character_json[random_character]['cn_name']);element.appendChild(newText(character_json[random_character]['cn_name']+'：“'+character_json[random_character]['voice']['信赖触摸']+'”'));",
+            "branch": [
+                {
+                    "limit": 100,
+                    "next": "基建触碰_结束"
+                }
+            ]
+        },
+        "基建触碰_结束":{
+            "story": [
+                "<div class='segmenting-line'><hr><div><span>基建触碰结束</span></div></div>"
+            ],
+            "exp":"element.innerHTML=element.innerHTML;",
             "branch": [
                 {
                     "limit": 100,

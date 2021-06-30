@@ -1,4 +1,4 @@
-
+var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
 main();
 
 function main() {
@@ -15,7 +15,6 @@ function main_page() {
 
     addElement(newElement(const_element_json["main_link"]));
 
-    var character_index = parseInt(Math.seededRandom(0, character_json.length - 1));
     var e_img=const_element_json["main_character_img"].replace("#CHARACTER_IMG_URL#",load_url + "png/" + character_json[character_index]['half']);
     addElement(newElement(e_img));
 
