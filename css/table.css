@@ -5,6 +5,7 @@ table.gridtable {
     border-width: 1px;
     border-color: #666666;
     border-collapse: collapse;
+    text-align: center;
 }
 table.gridtable th {
     border-width: 1px;
@@ -12,6 +13,7 @@ table.gridtable th {
     border-style: solid;
     border-color: #666666;
     background-color: #dedede;
+    text-align: center;
 }
 table.gridtable td {
     border-width: 1px;
@@ -19,4 +21,5 @@ table.gridtable td {
     border-style: solid;
     border-color: #666666;
     background-color: #ffffff;
+    text-align: center;
 }
