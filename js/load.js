@@ -48,7 +48,7 @@ addCSS('css/button.css');
 
 addJS('js/ui.js');
 addJS('js/event.js');
-addJS('js/system.js');
+addJS('js/game.js');
 
 function addJS(url) {
     var secScript = document.createElement('script');
