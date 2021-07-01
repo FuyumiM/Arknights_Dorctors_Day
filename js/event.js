@@ -14,7 +14,7 @@ class simple_story{
         var e=newElement("<p></p>");
         this.story.forEach(text => {
 
-            text=text.replace("#NAME#",user_name);
+            text=text.replace(/#NAME#/g,user_name);
 
             e.appendChild(newText(text));
         });

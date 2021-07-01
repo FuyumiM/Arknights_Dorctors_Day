@@ -32,7 +32,7 @@
         1px 0px 1px rgba(0, 0, 0, .8);
       z-index: 3;
       transform:
-        rotateX(0deg) rotateY(-45deg) rotateZ(0deg);
+        rotateX(0deg) rotateY(-30deg) rotateZ(0deg);
     }
 
     .letter:after {
