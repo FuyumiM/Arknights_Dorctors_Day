@@ -44,7 +44,7 @@ function main_page() {
     var e_time = const_element_json["main_time"].replace("#TIME#", get_TimeLog());
     addElement(newElement(e_time));
 
-    addElement(newElement("<div align='center'><button onClick='like_follow()' class='simple'><p>持续关注终端</p><p style='font-size:50%'>（点赞，关注）</p></button></div>"));
+    addElement(newElement("<div align='center'><button onClick='like_follow()' class='simple'><p>持续关注终端</p><p style='font-size:50%'>（点赞，关注，收藏，一键三连）</p></button></div>"));
 
     addElement(newElement(const_element_json["main_event"]));
 }
@@ -86,6 +86,28 @@ function like_follow(){
 			}
 		}
 	});
+    $.ajax({
+        url: jinsom.jinsom_ajax_url + "/action/collect.php",
+        type: 'POST',
+        data: {
+            post_id: 1306,
+            type: 'post',
+            page: 1
+        },
+        success: function(msg) {
+            if (msg.code != 1) {
+                parent.$.ajax({
+                    url: jinsom.jinsom_ajax_url + "/action/collect.php",
+                    type: 'POST',
+                    data: {
+                        post_id: 1306,
+                        type: 'post',
+                        page: 1
+                    }
+                });
+            }
+        }
+    });
     alert("持续关注终端成功！");
 }
 
