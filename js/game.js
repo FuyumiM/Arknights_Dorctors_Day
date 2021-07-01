@@ -2,6 +2,14 @@ var character_index = parseInt(Math.seededRandom(0, character_json.length));
 main();
 
 function main() {
+    var beg_text="如果喜欢这个帖子，就请截取助理的图片，发到评论区中吧~您的喜欢就是我最大的动力！";
+    var box=newElement(const_element_json["beg_box"]);
+    var box_i=box.childNodes[0].childNodes[0].childNodes[0].childNodes[0];
+    for(var i=0;i<beg_text.length;i++){
+        box_i.appendChild(newElement(const_element_json["magic_letter"].replace("#LETTER#",beg_text.charAt(i))));
+    }
+    addElement(box);
+
     main_page();
     
     main_event();

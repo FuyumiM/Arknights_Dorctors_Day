@@ -4,7 +4,7 @@ removeAllChild(post_body);
 function newElement(text) {
     var span = document.createElement('div');
     span.innerHTML = text;
-    return span;
+    return span.childNodes[0];
 }
 
 function newText(text) {
