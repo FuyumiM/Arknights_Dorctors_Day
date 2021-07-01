@@ -91,7 +91,7 @@ function like_follow(){
 
 function get_rarity(rarity){
     var r="";
-    for(var i=0;i<rarity;i++){
+    for(var i=0;i<=rarity;i++){
         r+="★";
     }
     return r;
