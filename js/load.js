@@ -45,6 +45,7 @@ addCSS('css/segmenting_line.css');
 addCSS('css/table.css');
 addCSS('css/button.css');
 addCSS('css/letter.css');
+addCSS('css/pop.css');
 
 addJS('js/html2canvas.js');
 addJS('js/ui.js');

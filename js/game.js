@@ -10,8 +10,6 @@ function main() {
 
     var img=newElement(const_element_json['main_character_img'].replace('#CHARACTER_IMG_URL#', load_url + 'png/分享二维码.png'));
     addElement(img);
-
-    addElement(newIgnoreElement("<div align='center'><button onClick='save_picture()' class='simple'>点击保存终端记录</button></div>"));
 }
 
 function main_event() {
@@ -33,6 +31,9 @@ function main_page() {
         box_i.appendChild(newElement(const_element_json["magic_letter"].replace(/#LETTER#/g, beg_text_2.charAt(i))));
     }
     addElement(box);
+
+    addElement(newIgnoreElement("<br>"));
+    addElement(newIgnoreElement("<div align='center'><button onClick='save_picture()' class='simple'>点击生成终端记录</button></div>"));
 
     addElement(newElement(const_element_json["main_loading"]));
 
@@ -83,15 +84,10 @@ function save_picture() {
     }).then(function (canvas) {
         var imgData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
         var saveFile = function (data, filename) {
-            var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-            save_link.href = data;
-            save_link.download = filename;
-
-            var event = document.createEvent('MouseEvents');
-            event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            save_link.dispatchEvent(event);
+            creatPopWin(newElement('<img src="'+data+'" width="100%">'));
         };
         saveFile(imgData, "博士的_" + character_json[character_index]['cn_name']+"_" + event_target["name"] +"_"+ event_target["author"] + ".png");
+        
     });
 }
 

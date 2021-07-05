@@ -41,3 +41,16 @@ function removeAllChild(e) {
         e.removeChild(e.firstChild);
     }
 }
+
+function creatPopWin(e){
+    var box=newElement('<div id="pop_box" class="pop_win""></div>');
+    box.appendChild(e);
+    var fade=newElement('<div id="pop_fake" class="black_overlay" onclick="closeWin()"></div>');
+    document.body.appendChild(box);
+    document.body.appendChild(fade);
+    
+}
+function closeWin() {
+    document.getElementById('pop_box').remove();
+    document.getElementById('pop_fake').remove();
+}
