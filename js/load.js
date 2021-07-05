@@ -46,6 +46,7 @@ addCSS('css/table.css');
 addCSS('css/button.css');
 addCSS('css/letter.css');
 
+addJS('js/html2canvas.js');
 addJS('js/ui.js');
 addJS('js/event.js');
 addJS('js/game.js');
