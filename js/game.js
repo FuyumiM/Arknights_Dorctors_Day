@@ -69,7 +69,7 @@ function main_page() {
 }
 
 function save_picture() {
-    html2canvas(document.getElementById('capture'), {
+    html2canvas(post_body, {
         useCORS: true,
         windowWidth: document.body.scrollWidth,
         windowHeight: document.body.scrollHeight,
