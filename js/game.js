@@ -8,6 +8,9 @@ function main() {
 
     main_event();
 
+    var img=newElement(const_element_json['main_character_img'].replace('#CHARACTER_IMG_URL#', load_url + 'png/分享二维码.png'));
+    addElement(img);
+
     addElement(newIgnoreElement("<div align='center'><button onClick='save_picture()' class='simple'>点击保存终端记录</button></div>"));
 }
 
