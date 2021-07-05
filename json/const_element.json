@@ -10,7 +10,7 @@
     "main_time": "<p style='float:center;text-align: center;'>#TIME#</p>",
     "main_event": "<p style='float:center;text-align: center;'><font color='red'>以下是PRTS选取的部分行动记录，请您审阅</font></p><div class='segmenting-line'><hr><div><span>事件记录</span></div></div>",
     "main_character_voice":"<p style='float:center;text-align: center;'>“#CHARACTER_VOICE#”</p>",
-    "beg_box":"<div  style='text-align: center;'><table align= 'center' class= 'gridtable' style='width:80%'><tr><td></tr></td></table></div>",
+    "beg_box":"<div style='text-align: center;'><table align= 'center' class= 'gridtable' style='width:80%'><tr><td></tr></td></table></div>",
     "magic_letter":"<span class='letter' data-letter='#LETTER#'>#LETTER#</span>",
     "event_icon": "<p style='text-indent: 2em;'><img src='#CHARACTER_ICON_URL#'></img></p>"
 }

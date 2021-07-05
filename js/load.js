@@ -1,4 +1,3 @@
-var debug = false;
 
 String.prototype.hashCode = function () {
     var hash = 0, i, chr;

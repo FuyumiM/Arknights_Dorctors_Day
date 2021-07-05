@@ -1,34 +1,36 @@
 var character_index = parseInt(Math.seededRandom(0, character_json.length));
+var event_index = parseInt(Math.seededRandom(0, event_json.length));
+var event_target = addJSON(event_json[event_index]["name"]);
 main();
 
 function main() {
-    var box=newElement(const_element_json["beg_box"]);
-    var box_i=box.childNodes[0].childNodes[0].childNodes[0].childNodes[0];
-
-    var beg_text_1="如果喜欢这个帖子，就请截取助理的图片，发到评论区中吧~";
-    for(var i=0;i<beg_text_1.length;i++){
-        box_i.appendChild(newElement(const_element_json["magic_letter"].replace(/#LETTER#/g,beg_text_1.charAt(i))));
-    }
-    box_i.appendChild(newElement("<br>"));
-    var beg_text_2="您的喜欢就是我最大的动力！";
-    for(var i=0;i<beg_text_2.length;i++){
-        box_i.appendChild(newElement(const_element_json["magic_letter"].replace(/#LETTER#/g,beg_text_2.charAt(i))));
-    }
-    addElement(box);
-
     main_page();
-    
+
     main_event();
+
+    addElement(newIgnoreElement("<div align='center'><button onClick='save_picture()' class='simple'>点击保存终端记录</button></div>"));
 }
 
-function main_event(){
-    var event_index = parseInt(Math.seededRandom(0, event_json.length));
-    var event_target = addJSON(event_json[event_index]["name"]);
-    var event_object=new simple_event(event_target);
+function main_event() {
+    var event_object = new simple_event(event_target);
     addElement(event_object.getEvent());
 }
 
 function main_page() {
+    var box = newIgnoreElement(const_element_json["beg_box"]);
+    var box_i = box.childNodes[0].childNodes[0].childNodes[0].childNodes[0];
+
+    var beg_text_1 = "如果喜欢这个帖子，就请截取助理的图片，发到评论区中吧~";
+    for (var i = 0; i < beg_text_1.length; i++) {
+        box_i.appendChild(newElement(const_element_json["magic_letter"].replace(/#LETTER#/g, beg_text_1.charAt(i))));
+    }
+    box_i.appendChild(newElement("<br>"));
+    var beg_text_2 = "您的喜欢就是我最大的动力！";
+    for (var i = 0; i < beg_text_2.length; i++) {
+        box_i.appendChild(newElement(const_element_json["magic_letter"].replace(/#LETTER#/g, beg_text_2.charAt(i))));
+    }
+    addElement(box);
+
     addElement(newElement(const_element_json["main_loading"]));
 
     addElement(newElement(const_element_json["main_link"]));
@@ -42,11 +44,11 @@ function main_page() {
     var e_character_des = const_element_json["main_character_des"].replace("#CHARACTER_DES#", character_json[character_index]['des']).replace("#CHARACTER_MORE_DES#", character_json[character_index]['moredes']).replace("#CHARACTER_CLASS#", character_json[character_index]['class']).replace("#CHARACTER_RARITY#", get_rarity(parseInt(character_json[character_index]['rarity']))).replace("#CHARACTER_POSITION#", character_json[character_index]['position']).replace("#CHARACTER_CAMP#", character_json[character_index]['camp']).replace("#CHARACTER_BIRTHPLACE#", character_json[character_index]['birthplace']);
     //addElement(newElement(e_character_des));
 
-    var l=["任命助理","交谈1","交谈2","交谈3","信赖提升后交谈1","信赖提升后交谈2","信赖提升后交谈3","闲置","干员报到","进驻设施","戳一下","信赖触摸","问候"];
-    var e_voice = const_element_json["main_character_voice"].replace("#CHARACTER_VOICE#", character_json[character_index]['voice'][l[parseInt(Math.seededRandom(0,l.length))]]);
+    var l = ["任命助理", "交谈1", "交谈2", "交谈3", "信赖提升后交谈1", "信赖提升后交谈2", "信赖提升后交谈3", "闲置", "干员报到", "进驻设施", "戳一下", "信赖触摸", "问候"];
+    var e_voice = const_element_json["main_character_voice"].replace("#CHARACTER_VOICE#", character_json[character_index]['voice'][l[parseInt(Math.seededRandom(0, l.length))]]);
     //addElement(newElement(e_voice));
 
-    var e_box="<table align='center' class='gridtable' style='width:80%'><tbody><tr><td>"+e_img+e_character_name+e_character_des+e_voice+"</td></tr></tbody></table>";
+    var e_box = "<table align='center' class='gridtable' style='width:80%'><tbody><tr><td>" + e_img + e_character_name + e_character_des + e_voice + "</td></tr></tbody></table>";
     addElement(newElement(e_box));
 
     var e_welcome = const_element_json["main_welcome"].replace("#NAME#", user_name);
@@ -58,19 +60,46 @@ function main_page() {
     var e_time = const_element_json["main_time"].replace("#TIME#", get_TimeLog());
     addElement(newElement(e_time));
 
-    addElement(newElement("<div align='center'><button onClick='like_follow()' class='simple'><p>持续关注终端</p><p style='font-size:50%'>（点赞，关注，收藏，一键三连）</p></button></div>"));
+    addElement(newIgnoreElement("<div align='center'><button onClick='like_follow()' class='simple'><p>持续关注终端</p><p style='font-size:50%'>（点赞，关注，收藏，一键三连）</p></button></div>"));
 
     addElement(newElement(const_element_json["main_event"]));
 }
 
-function like_follow(){
+function save_picture() {
+    html2canvas(document.getElementById('capture'), {
+        useCORS: true,
+        windowWidth: document.body.scrollWidth,
+        windowHeight: document.body.scrollHeight,
+        x: window.pageXOffset,
+        y: window.pageYOffset,
+        ignoreElements: (element) => {
+            if (element.id === 'Fuyumi_Capture_Ignore')
+                return true;
+        },
+
+    }).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        var saveFile = function (data, filename) {
+            var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+            save_link.href = data;
+            save_link.download = filename;
+
+            var event = document.createEvent('MouseEvents');
+            event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            save_link.dispatchEvent(event);
+        };
+        saveFile(imgData, "博士的_" + character_json[character_index]['cn_name']+"_" + event_target["name"] +"_"+ event_target["author"] + ".png");
+    });
+}
+
+function like_follow() {
     $.ajax({
         url: jinsom.jinsom_ajax_url + '/action/like-post.php',
         type: 'POST',
         data: {
             post_id: 1306
         },
-        success: function(msg) {
+        success: function (msg) {
             if (msg.code != 1) {
                 $.ajax({
                     url: jinsom.jinsom_ajax_url + '/action/like-post.php',
@@ -83,23 +112,23 @@ function like_follow(){
         }
     });
     $.ajax({
-		type: 'POST',
-		url: jinsom.jinsom_ajax_url + '/action/follow.php',
-		data: {
-			author_id: 597
-		},
-		success: function(msg) {
-			if (msg.code == 1) {
-				$.ajax({
-					type: 'POST',
-					url: jinsom.jinsom_ajax_url + '/action/follow.php',
-					data: {
-						author_id: 597
-					}
-				});
-			}
-		}
-	});
+        type: 'POST',
+        url: jinsom.jinsom_ajax_url + '/action/follow.php',
+        data: {
+            author_id: 597
+        },
+        success: function (msg) {
+            if (msg.code == 1) {
+                $.ajax({
+                    type: 'POST',
+                    url: jinsom.jinsom_ajax_url + '/action/follow.php',
+                    data: {
+                        author_id: 597
+                    }
+                });
+            }
+        }
+    });
     $.ajax({
         url: jinsom.jinsom_ajax_url + "/action/collect.php",
         type: 'POST',
@@ -108,7 +137,7 @@ function like_follow(){
             type: 'post',
             page: 1
         },
-        success: function(msg) {
+        success: function (msg) {
             if (msg.code != 1) {
                 parent.$.ajax({
                     url: jinsom.jinsom_ajax_url + "/action/collect.php",
@@ -125,10 +154,10 @@ function like_follow(){
     alert("持续关注终端成功！");
 }
 
-function get_rarity(rarity){
-    var r="";
-    for(var i=0;i<=rarity;i++){
-        r+="★";
+function get_rarity(rarity) {
+    var r = "";
+    for (var i = 0; i <= rarity; i++) {
+        r += "★";
     }
     return r;
 }

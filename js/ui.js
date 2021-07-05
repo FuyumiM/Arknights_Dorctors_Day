@@ -7,6 +7,14 @@ function newElement(text) {
     return span.childNodes[0];
 }
 
+function newIgnoreElement(text) {
+    var span = document.createElement('div');
+    span.innerHTML = text;
+    var e=span.childNodes[0];
+    e.id="Fuyumi_Capture_Ignore";
+    return e;
+}
+
 function newText(text) {
     var span = document.createElement('p');
     span.innerHTML = text;
