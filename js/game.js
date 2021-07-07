@@ -8,7 +8,7 @@ function main() {
 
     main_event();
 
-    var img=newElement(const_element_json['main_character_img'].replace('#CHARACTER_IMG_URL#', load_url + 'png/分享二维码.png'));
+    var img = newElement(const_element_json['main_character_img'].replace('#CHARACTER_IMG_URL#', load_url + 'png/分享二维码.png'));
     addElement(img);
 }
 
@@ -72,10 +72,12 @@ function main_page() {
 function save_picture() {
     html2canvas(post_body, {
         useCORS: true,
-        windowWidth: document.body.scrollWidth,
-        windowHeight: document.body.scrollHeight,
-        x: window.pageXOffset,
-        y: window.pageYOffset,
+        //width: post_body.clientWidth,
+        //height: post_body.clientHeight,
+        windowWidth: post_body.scrollWidth,
+        windowHeight: post_body.scrollHeight,
+        x: post_body.pageXOffset,
+        y: post_body.pageYOffset,
         ignoreElements: (element) => {
             if (element.id === 'Fuyumi_Capture_Ignore')
                 return true;
@@ -84,10 +86,10 @@ function save_picture() {
     }).then(function (canvas) {
         var imgData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
         var saveFile = function (data, filename) {
-            creatPopWin(newElement('<img src="'+data+'" width="100%">'));
+            creatPopWin(newElement('<img src="' + data + '" width="100%">'));
         };
-        saveFile(imgData, "博士的_" + character_json[character_index]['cn_name']+"_" + event_target["name"] +"_"+ event_target["author"] + ".png");
-        
+        saveFile(imgData, "博士的_" + character_json[character_index]['cn_name'] + "_" + event_target["name"] + "_" + event_target["author"] + ".png");
+
     });
 }
 
